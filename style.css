@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    border: 1px solid rebeccapurple;
+}
+
+.header {
+    height: 124px;
+    border: 1px solid black;
+}
+
+.header__box {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid red;
+}
+
+.footer {
+  height: 156px;
+  border: 1px solid red;
+}
+
+.footer__box {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid red;
+}
+
+.footer__nav {
+    flex-grow: 1;
+}
