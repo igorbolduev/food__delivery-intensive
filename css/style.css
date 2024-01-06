@@ -10,7 +10,7 @@
 .container {
   height: 100%;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1230px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -72,7 +72,7 @@
 
 .banner__item {
   background-color: #fff1b8;
-  background-image: url("./images/banners/bg-banner-1.png");
+  background-image: url("/images/banners/bg-banner-1.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center right;
@@ -114,7 +114,7 @@
   min-width: 306px;
   padding: 5px 0;
   padding-left: 10px;
-  background-image: url("images/icons/search.svg");
+  background-image: url("/images/icons/search.svg");
   background-repeat: no-repeat;
   background-position-x: 5%;
   background-position-y: center;
@@ -145,6 +145,8 @@
   background: #ffffff;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  text-decoration: none;
+  color: #000000;
 }
 
 .card__image {
@@ -216,7 +218,7 @@
 .card__description-group::before {
   content: "";
   position: absolute;
-  background-image: url("images/icons/ellipse.svg");
+  background-image: url("/images/icons/ellipse.svg");
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -229,6 +231,7 @@
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
+  margin-bottom: 10px;
 }
 
 .card__description--contain {

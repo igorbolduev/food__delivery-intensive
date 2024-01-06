@@ -9,7 +9,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./index.js" defer></script>
     <title>Delivery Food</title>
   </head>
 
@@ -19,16 +20,16 @@
         <div class="container">
           <div class="header__box">
             <a class="header__logo logo" href="index.html">
-              <img src="images/logo.svg" />
+              <img src="./images/logo.svg" />
             </a>
             <div class="header__controls">
               <button class="button button--primary">
-                <img src="images/controls/user.svg" alt="button user login" />
+                <img src="./images/controls/user.svg" alt="button user login" />
                 Войти
               </button>
-              <button class="button button--outline">
+              <button class="button button--outline" id="cart-button">
                 <img
-                  src="images/controls/shopping-cart.svg"
+                  src="./images/controls/shopping-cart.svg"
                   alt="button shopping cart"
                 />
                 Корзина
@@ -41,10 +42,10 @@
       <main class="main">
         <section class="products">
           <div class="container">
-            <div class="products__wrapper">
+            <div class="products__wrapper" id="goods-container">
               <div class="products__card card">
                 <div class="card__image">
-                  <img src="images/goods/image-1.jpg" alt="image-1" />
+                  <img src="./images/goods/image-1.jpg" alt="image-1" />
                 </div>
                 <div class="card__description">
                   <div class="card__description-row">
@@ -59,7 +60,7 @@
                     <div class="card__description--controls">
                       <button class="button button--primary">
                         <img
-                          src="images/controls/user.svg"
+                          src="./images/controls/user.svg"
                           alt="button user login"
                         />
                         В корзину
@@ -72,7 +73,7 @@
 
               <div class="products__card card">
                 <div class="card__image">
-                  <img src="images/goods/image-2.jpg" alt="image-2" />
+                  <img src="./images/goods/image-2.jpg" alt="image-2" />
                 </div>
                 <div class="card__description">
                   <div class="card__description-row">
@@ -91,7 +92,7 @@
                       <button class="button button--primary">
                         В корзину
                         <img
-                          src="images/controls/user.svg"
+                          src="./images/controls/user.svg"
                           alt="button user login"
                         />
                       </button>
@@ -103,7 +104,7 @@
 
               <div class="products__card card">
                 <div class="card__image">
-                  <img src="images/goods/image-3.jpg" alt="image-3" />
+                  <img src="./images/goods/image-3.jpg" alt="image-3" />
                 </div>
                 <div class="card__description">
                   <div class="card__description-row">
@@ -120,7 +121,7 @@
                       <button class="button button--primary">
                         В корзину
                         <img
-                          src="images/icons/shopping-cart.svg"
+                          src="./images/icons/shopping-cart.svg"
                           alt="button user login"
                         />
                       </button>
@@ -132,7 +133,7 @@
 
               <div class="products__card card">
                 <div class="card__image">
-                  <img src="images/goods/image-4.jpg" alt="image-4" />
+                  <img src="./images/goods/image-4.jpg" alt="image-4" />
                 </div>
                 <div class="card__description">
                   <div class="card__description-row">
@@ -149,7 +150,7 @@
                       <button class="button button--primary">
                         В корзину
                         <img
-                          src="images/icons/shopping-cart.svg"
+                          src="./images/icons/shopping-cart.svg"
                           alt="button user login"
                         />
                       </button>
@@ -161,7 +162,7 @@
 
               <div class="products__card card">
                 <div class="card__image">
-                  <img src="images/goods/image-5.jpg" alt="image-5" />
+                  <img src="./images/goods/image-5.jpg" alt="image-5" />
                 </div>
                 <div class="card__description">
                   <div class="card__description-row">
@@ -180,7 +181,7 @@
                       <button class="button button--primary">
                         В корзину
                         <img
-                          src="images/icons/shopping-cart.svg"
+                          src="./images/icons/shopping-cart.svg"
                           alt="button user login"
                         />
                       </button>
@@ -192,7 +193,7 @@
 
               <div class="products__card card">
                 <div class="card__image">
-                  <img src="images/goods/image-6.jpg" alt="image-6" />
+                  <img src="./images/goods/image-6.jpg" alt="image-6" />
                 </div>
                 <div class="card__description">
                   <div class="card__description-row">
@@ -211,7 +212,7 @@
                       <button class="button button--primary">
                         В корзину
                         <img
-                          src="images/icons/shopping-cart.svg"
+                          src="./images/icons/shopping-cart.svg"
                           alt="button user login"
                         />
                       </button>
@@ -225,12 +226,87 @@
         </section>
       </main>
 
+      <div class="cart-modal__overlay">
+        <div class="cart-modal">
+          <div class="cart-modal__header">
+            <h2 class="cart-modal__header--title">Корзина</h2>
+            <span class="cart-modal__header--close" id="close-button">
+              <img src="./images/icons/close.svg" alt="close button" />
+            </span>
+          </div>
+
+          <div class="cart-modal__body">
+            <ul class="cart__list">
+              <li class="cart__item">
+                <p class="cart__item-title">Ролл угорь стандарт</p>
+                <div class="cart__item-controls">
+                  <div class="cart__item-controls--price">250 ₽</div>
+                  <button class="button button--outline">-</button>
+                  <div class="cart__item-controls--count">1</div>
+                  <button class="button button--outline">+</button>
+                </div>
+              </li>
+
+              <li class="cart__item">
+                <p class="cart__item-title">Ролл угорь стандарт</p>
+                <div class="cart__item-controls">
+                  <div class="cart__item-controls--price">250 ₽</div>
+                  <button class="button button--outline">-</button>
+                  <div class="cart__item-controls--count">1</div>
+                  <button class="button button--outline">+</button>
+                </div>
+              </li>
+
+              <li class="cart__item">
+                <p class="cart__item-title">Ролл угорь стандарт</p>
+                <div class="cart__item-controls">
+                  <div class="cart__item-controls--price">250 ₽</div>
+                  <button class="button button--outline">-</button>
+                  <div class="cart__item-controls--count">1</div>
+                  <button class="button button--outline">+</button>
+                </div>
+              </li>
+
+              <li class="cart__item">
+                <p class="cart__item-title">Ролл угорь стандарт</p>
+                <div class="cart__item-controls">
+                  <div class="cart__item-controls--price">250 ₽</div>
+                  <button class="button button--outline">-</button>
+                  <div class="cart__item-controls--count">1</div>
+                  <button class="button button--outline">+</button>
+                </div>
+              </li>
+
+              <li class="cart__item">
+                <p class="cart__item-title">Ролл угорь стандарт</p>
+                <div class="cart__item-controls">
+                  <div class="cart__item-controls--price">250 ₽</div>
+                  <button class="button button--outline">-</button>
+                  <div class="cart__item-controls--count">1</div>
+                  <button class="button button--outline">+</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cart-modal__footer">
+            <div class="cart-modal__footer--price">1250 ₽</div>
+            <div class="cart-modal__footer--controls">
+              <button class="button button--primary">Оформить заказ</button>
+              <button class="button button--outline" id="cancel-button">
+                Отмена
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <footer class="footer">
         <div class="container">
           <div class="footer__box">
-            <div class="footer__logo logo">
-              <img src="images/logo.svg" alt="logo" />
-            </div>
+            <a class="footer__logo logo" href="./index.html">
+              <img src="./images/logo.svg" alt="logo" />
+            </a>
             <div class="footer__nav">
               <ul>
                 <li>
@@ -248,15 +324,13 @@
               </ul>
             </div>
             <div class="footer__socials">
-              <img src="images/icons/instagram.svg" alt="button insagram" />
-              <img src="images/icons/facebook.svg" alt="button facebook" />
-              <img src="images/icons/vk.svg" alt="button vk" />
+              <img src="./images/icons/instagram.svg" alt="button insagram" />
+              <img src="./images/icons/facebook.svg" alt="button facebook" />
+              <img src="./images/icons/vk.svg" alt="button vk" />
             </div>
           </div>
         </div>
       </footer>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
